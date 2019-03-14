@@ -4,24 +4,4 @@
   <p>Resize this responsive page to see the effect!</p> 
 </div>-->
 
-<div class="page-wrapper">
-  <!--<app-navbar></app-navbar> -->
-  <main class="page-content">
-    <app-sidebar></app-sidebar>
-    <div class="pages container-fluid pt-4 pb-4 pl-4 pr-4 ">
-        <div style="text-align:center">
-            <h1>
-             Toaster Fun! 
-            </h1>
-            <h2><a href="#" class="btn btn-success" (click)="showSuccess()">Toastr success</a></h2>
-            <h2><a href="#" class="btn btn-info" (click)="showInfo()">Toastr info</a></h2>
-            <h2><a href="#" class="btn btn-warning" (click)="showWarning()">Toastr warning</a></h2>
-            <h2><a href="#" class="btn btn-danger" (click)="showError()">Toastr danger</a></h2>
-          </div>
-      <router-outlet></router-outlet>
-      <hr>
-    <app-footer></app-footer>
-    </div>
-    <!-- <div class="overlay" (click)="toggleSidebar()"></div> -->
-  </main>
-</div>
+<router-outlet></router-outlet>

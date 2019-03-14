@@ -1,4 +1,8 @@
-<p>
-  user works!
+<p style="text-align: center">
+  Todos los usuarios
 </p>
-<button class="btn btn-success" (click)="showSuccessU()">Toast</button>
+<div class="container">
+  <ul class="list">
+    <li *ngFor="let user of users">{{ user.nombre }}, {{ user.apellido }}</li>
+  </ul>
+</div>
