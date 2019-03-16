@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { User } from '../user.model';
+
 import { UserService } from '../user.service';
 import { first } from 'rxjs/operators';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user',

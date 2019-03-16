@@ -3,22 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from '../user/user.model';
 
 @Injectable()
 export class AuthenticationService {
-    private currentUserSubject: BehaviorSubject<User>;
-    public currentUser: Observable<User>;
+    constructor(private http: HttpClient) { }
 
-    constructor(private http: HttpClient) {
-        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-        this.currentUser = this.currentUserSubject.asObservable();
-    }
-
-    public get currentUserValue(): User {
-        return this.currentUserSubject.value;
-    }
     login(username: string, password: string) {
         return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username: username, password: password })
             .pipe(map(user => {
