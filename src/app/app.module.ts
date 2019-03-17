@@ -10,14 +10,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { UserModule } from './user/user.module';
-import { ComponentModule } from './component/component.module';
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
-import { LoginModule } from './login/login.module';
-import { RegisterModule } from './register/register.module';
 import { HomeModule } from './home/home.module';
+import { MaterialModule } from 'src/material';
+import { AuthModule } from './auth/auth.module';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -35,9 +34,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
     HomeModule,
     UserModule,
-    LoginModule,
-    RegisterModule,
-    // ComponentModule,
+    AuthModule,
+    MaterialModule,
     PerfectScrollbarModule,
     ToastrModule.forRoot()
   ],

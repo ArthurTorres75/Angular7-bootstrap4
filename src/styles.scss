@@ -1,3 +1,31 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Base2-primary: mat-palette($mat-indigo);
+$Base2-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Base2-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$Base2-theme: mat-light-theme($Base2-primary, $Base2-accent, $Base2-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($Base2-theme);
+
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/scss/bootstrap';
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
@@ -12,7 +40,6 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 // or import a bootstrap 4 alert styled design (SASS ONLY)
 // should be after your bootstrap imports, it uses bs4 variables, mixins, functions
 @import '~ngx-toastr/toastr-bs4-alert';
-
 #toast-container > div {
     opacity:1;
 }
@@ -48,3 +75,5 @@ body {
     opacity: .5;
   
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

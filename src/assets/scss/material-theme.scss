@@ -1,0 +1,43 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$mat-puck: (
+  50: #E5EAE3,
+  100: #BECAB8,
+  200: #93A789,
+  300: #68835A,
+  400: #476936,
+  500: #162739, // primary-color
+  600: #234711,
+  700: #1D3D0E,
+  800: #17350B,
+  900: #0E2506,
+  A100: #68835A,
+  A200:#3f4f63,// accent color
+  A400: #93a789,
+  A700: #00bfa5,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+
+$mytheme-primary: mat-palette($mat-puck);
+$mytheme-accent:  mat-palette($mat-puck, A200, A100, A400);
+
+$mytheme: mat-light-theme($mytheme-primary,$mytheme-accent);
+
+@include angular-material-theme($mytheme);

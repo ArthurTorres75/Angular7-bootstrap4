@@ -3,7 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
-import { AuthenticationService } from '../authentication.service';
+import { AuthenticationService } from '../auth-services/authentication.service';
+
 
 
 @Component({templateUrl: 'login.component.html'})
@@ -50,6 +51,7 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.router.navigate([this.returnUrl]);
+                    this.toastr.success('Acceso garantizado');
                 },
                 error => {
                     this.toastr.error(error);
